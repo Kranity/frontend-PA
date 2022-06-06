@@ -4,7 +4,7 @@
         <div class="flex flex-col border-4 rounded w-1/2 h-3/5">
             <h1 class="text-3xl text-center font-semibold bg-gray-300 p-5">Cadastro de Ponto</h1>
             <div class="flex justify-center items-center">
-                <div class="space-y-5 my-5 w-1/2">
+                <div class="space-y-5 my-5 w-3/5">
                     <div class="flex flex-col">
                         <label class="text-xl text-gray-500" for="name">Nome</label>
                         <input class="border border-black rounded py-1" v-model="name" type="text" id="name">
@@ -26,9 +26,9 @@
 
 <script>
 import axios from "axios"
-import Navbar from '../components/Navbar'
+import Navbar from '../../components/Navbar'
 export default {
-    name: 'PointsRegistration',
+    name: 'PointRegistration',
     components: {
         Navbar
     },
@@ -54,7 +54,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>
