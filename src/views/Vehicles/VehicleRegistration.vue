@@ -15,21 +15,21 @@
                     </div>
                     <div class="flex flex-col">
                         <label class="text-xl text-gray-500" for="height">Altura</label>
-                        <input class="border border-black rounded py-1" v-model="height" type="text" id="height">
+                        <input class="border border-black rounded py-1" v-model="height" type="number" id="height">
                     </div>
                     <div class="flex flex-col">
                         <label class="text-xl text-gray-500" for="width">Largura</label>
-                        <input class="border border-black rounded py-1" v-model="width" type="text" id="width">
+                        <input class="border border-black rounded py-1" v-model="width" type="number" id="width">
                     </div>
                     <div class="flex flex-col">
                         <label class="text-xl text-gray-500" for="length">Comprimento</label>
-                        <input class="border border-black rounded py-1" v-model="length" type="text" id="length">
+                        <input class="border border-black rounded py-1" v-model="length" type="number" id="length">
                     </div>
                     <div class="flex flex-col">
                         <label class="text-xl text-gray-500" for="weight">Peso</label>
-                        <input class="border border-black rounded py-1" v-model="weight" type="text" id="weight">
+                        <input class="border border-black rounded py-1" v-model="weight" type="number" id="weight">
                     </div>
-                    <button @click="cadastrarVeiculo" class="text-lg text-white bg-gray-500 rounded w-full py-2">Cadastrar</button>
+                    <button @click="postVehicles" class="text-lg text-white bg-gray-500 rounded w-full py-2">Cadastrar</button>
                 </div>
             </div>
         </div>
@@ -40,7 +40,6 @@
 import axios from "axios"
 import Navbar from '../../components/Navbar'
 export default {
-    name: 'VehicleRegistration',
     components: {
         Navbar
     },
@@ -55,7 +54,7 @@ export default {
         }
     },
     methods: {
-        cadastrarVeiculo() {
+        postVehicles() {
             axios({
             method: 'post',
             url: 'http://localhost:3000/bus',

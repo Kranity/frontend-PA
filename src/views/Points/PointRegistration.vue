@@ -28,7 +28,6 @@
 import axios from "axios"
 import Navbar from '../../components/Navbar'
 export default {
-    name: 'PointRegistration',
     components: {
         Navbar
     },
@@ -40,7 +39,7 @@ export default {
         }
     },
     methods: {
-        cadastrarPonto() {
+        postPoints() {
             axios({
             method: 'post',
             url: 'http://localhost:3000/stop',

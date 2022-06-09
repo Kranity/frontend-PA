@@ -14,8 +14,8 @@
                     <button class="flex justify-end text-xs mt-1">Esqueceu a senha?</button>
                 </div>
                 <div class="flex flex-col text-center space-y-3 w-3/5">
-                    <router-link @click="logar" class="text-lg text-white bg-gray-500 rounded py-1" to="/VehicleRegistration">Entrar</router-link>
-                    <router-link class="text-lg text-white bg-gray-500 rounded py-1" to="/VehicleRegistration">Cadastre-se</router-link>
+                    <router-link @click="logar" class="text-lg text-white bg-gray-500 rounded py-1" to="VehicleRegistration">Entrar</router-link>
+                    <router-link class="text-lg text-white bg-gray-500 rounded py-1" to="VehicleRegistration">Cadastre-se</router-link>
                 </div>
             </div>
         </div>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {

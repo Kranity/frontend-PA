@@ -13,13 +13,13 @@
                         <label class="text-xl text-gray-500" for="description">Descrição (opcional)</label>
                         <input class="border border-black rounded py-1" v-model="description" type="text" id="description">
                     </div>
-                    <div class="h-60 overflow-scroll border-4 rounded p-3">
+                    <div class="h-60 overflow-y-scroll border-4 rounded p-3">
                         <div v-for="stop in stops" :key="stop.id" class="flex items-center">
                             <input class="border border-black rounded" v-model="selectedStops" :value="stop.id" type="checkbox">
                             <label class="text-xl text-gray-500 pl-3">{{stop.name}}</label>
                         </div>
                     </div>
-                    <button @click="cadastrarRota" class="text-lg text-white bg-gray-500 rounded w-full py-2">Cadastrar</button>
+                    <button @click="postRoute" class="text-lg text-white bg-gray-500 rounded w-full py-2">Cadastrar</button>
                 </div>
             </div>
         </div>
@@ -30,7 +30,6 @@
 import axios from "axios"
 import Navbar from '../../components/Navbar'
 export default {
-    name: 'RouteRegistration',
     components: {
         Navbar
     },
@@ -43,13 +42,13 @@ export default {
         }
     },
     methods: {
-        buscarPontos() {
+        getPoints() {
             axios({
             method: 'get',
             url: 'http://localhost:3000/stop',
             }).then((res) => {this.stops = res.data})
         },
-        cadastrarRota() {
+        postRoute() {
             axios({
             method: 'post',
             url: 'http://localhost:3000/line',
@@ -62,7 +61,7 @@ export default {
         }
     },
     created() {
-        this.buscarPontos()
+        this.getPoints()
     }
 }
 </script>
